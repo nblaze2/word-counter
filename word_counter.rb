@@ -11,6 +11,7 @@ def word_counter(text, num_of_words = nil)
   original_contents = []
   stripped_contents = []
   split_contents = []
+
   File.foreach(text) {|line| original_contents << line }
   original_contents.each do |line|
     stripped_contents << line.downcase.gsub(/[^a-z0-9\s]/i, '').strip
@@ -29,12 +30,18 @@ def word_counter(text, num_of_words = nil)
       word_frequencies[word] += 1
     end
   end
+
+  skip_words = []
+  File.foreach('stop_words.txt') { |word| skip_words << word.strip }
+
   sorted_frequencies = word_frequencies.sort_by { |word| word.last }.reverse
   i = 0
   sorted_frequencies.each do |word|
     if i < num_of_words
-      puts "'#{word[0]}' occurs #{word[1]} times."
-      i += 1
+      if !skip_words.include?(word[0])
+        puts "'#{word[0]}' occurs #{word[1]} times."
+        i += 1
+      end
     end
   end
 end
