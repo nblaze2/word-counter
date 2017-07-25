@@ -26,4 +26,5 @@ $ ruby word_counter.rb poe_usher.txt 10
 'one' occurs 15 times.
 'house' occurs 14 times.
 'certain' occurs 12 times.
-'character' occurs 12 times.```
+'character' occurs 12 times.
+```
