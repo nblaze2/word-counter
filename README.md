@@ -14,9 +14,9 @@ Another text file, `stop_words.txt` was used to exclude such words when parsing 
 
 Pass both the filename to read and the number of words you want printed out:
 
-```$ ruby word_counter.rb poe_usher.txt 10
+```$ ruby word_counter.rb poe_usher.txt 10```
 
-'upon' occurs 53 times.
+```'upon' occurs 53 times.
 'now' occurs 20 times.
 'usher' occurs 19 times.
 'long' occurs 19 times.
